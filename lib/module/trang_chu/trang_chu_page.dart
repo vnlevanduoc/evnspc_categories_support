@@ -1,14 +1,45 @@
 import 'dart:convert';
+import 'dart:math';
 
+import 'package:evnspc_categories_support/data/remote/dongbo_service.dart';
+import 'package:evnspc_categories_support/data/repo/dongbo_repo.dart';
 import 'package:evnspc_categories_support/module/trang_chu/trang_chu_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TrangChuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        Provider.value(
+          value: DongBoService(),
+        ),
+        ProxyProvider<DongBoService, DongBoRepo>(
+          update: (
+            BuildContext context,
+            DongBoService service,
+            DongBoRepo repo,
+          ) {
+            return DongBoRepo(
+              service: service,
+            );
+          },
+        ),
+      ],
+      child: ConsumerWidget(),
+    );
+  }
+}
+
+class ConsumerWidget extends StatelessWidget {
+  const ConsumerWidget({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return Provider<TrangChuBloc>.value(
-      value: TrangChuBloc(),
+      value: TrangChuBloc(repo: Provider.of(context)),
       child: Container(
         // decoration: BoxDecoration(
         //   // Box decoration takes a gradient
@@ -123,19 +154,82 @@ class _TrangChuWidgetState extends State<TrangChuWidget> {
         return Card(
           child: Column(
             children: <Widget>[
-              ListTile(
-                title: Text(result[index]["Desc"]),
-                subtitle: Text(result[index]["Title"]),
+              InkWell(
+                child: ListTile(
+                  title: Text(
+                    result[index]["Desc"],
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(result[index]["Title"]),
+                ),
+                onTap: () async {
+                  if (await canLaunch(result[index]["Title"])) {
+                    await launch(result[index]["Title"]);
+                  } else {
+                    throw 'Could not launch ${result[index]["Title"]}';
+                  }
+                },
               ),
               Divider(
                 color: Colors.black45,
               ),
-              // ListView.builder(
-              //   itemCount: listPerson.length,
-              //   itemBuilder: (context, pIndex) {
-              //     return new Text(listPerson[pIndex]["Name"]);
-              //   },
-              // ),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: ClampingScrollPhysics(),
+                itemCount: listPerson.length,
+                itemBuilder: (context, pIndex) {
+                  List<String> images_male = [
+                    "assets/images/christian.jpg",
+                    "assets/images/matt.jpg",
+                    "assets/images/tom.jpg"
+                  ];
+
+                  List<String> images_female = [
+                    "assets/images/lindsay.png",
+                    "assets/images/rachel.png"
+                  ];
+
+                  return InkWell(
+                    onTap: () async {
+                      if (await canLaunch(
+                          'tel://${listPerson[pIndex]["Phone"]}')) {
+                        await launch('tel://${listPerson[pIndex]["Phone"]}');
+                      } else {
+                        throw 'Could not launch ${listPerson[pIndex]["Phone"]}';
+                      }
+                    },
+                    child: ListTile(
+                      leading: ClipOval(
+                        child: Image(
+                          image: AssetImage(
+                              listPerson[pIndex]["GioiTinh"] == "0"
+                                  ? images_female[
+                                      Random().nextInt(images_female.length)]
+                                  : images_male[
+                                      Random().nextInt(images_male.length)]),
+                          width: 50,
+                          height: 50,
+                        ),
+                      ),
+                      title: Text(
+                        listPerson[pIndex]["Name"],
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black54,
+                        ),
+                      ),
+                      subtitle: Text(
+                        listPerson[pIndex]["Phone"],
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         );
