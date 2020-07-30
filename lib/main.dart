@@ -1,10 +1,11 @@
-import 'package:evnspc_categories_support/module/dang_nhap/dang_nhap_page.dart';
+import 'package:evnspc_categories_support/db/spcit_db.dart';
 import 'package:evnspc_categories_support/module/trang_chu/trang_chu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
+Future<void> main() async {
+  await SpcitDatabase.instance.init(); //Khởi tạo database
   runApp(MyApp());
 }
 

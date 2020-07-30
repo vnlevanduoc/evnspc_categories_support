@@ -4,7 +4,6 @@ import 'package:evnspc_categories_support/base/base_bloc.dart';
 import 'package:evnspc_categories_support/base/base_event.dart';
 import 'package:evnspc_categories_support/data/repo/dongbo_repo.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 
 class TrangChuBloc extends BaseBloc {
@@ -16,13 +15,15 @@ class TrangChuBloc extends BaseBloc {
   Sink<String> get dataSink => _data.sink;
 
   initData() async {
+    //Lấy dữ liệu từ internet nếu lấy đc thì insert vào database
+    //Nếu không lấy đc hoặc lỗi thì lấy dữ liệu trước đó
     try {
-      //Nếu có internet thì lấy về là update lại file json
       var result = await _repo.get_dulieu();
-      writeToFile(jsonEncode(result), "assets/data/data.json");
+      //Save data
+      _repo.saveData(jsonEncode(result));
       dataSink.add(jsonEncode(result));
     } catch (e) {
-      var oldResult = await readFile("assets/data/data.json");
+      var oldResult = await _repo.selectData();
       dataSink.add(oldResult);
     }
   }

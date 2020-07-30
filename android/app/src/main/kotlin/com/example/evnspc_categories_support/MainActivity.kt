@@ -1,4 +1,4 @@
-package com.example.evnspc_categories_support
+package vn.spcit.evnspc_categories_support
 
 import io.flutter.embedding.android.FlutterActivity
 
