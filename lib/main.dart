@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blueAccent,
         fontFamily: 'ProductSans',
-        splashColor: Colors.transparent, //hiệu ứng splash trong material
+        //splashColor: Colors.blueAccent, //hiệu ứng splash trong material
       ),
       initialRoute: '/trang_chu',
       routes: <String, WidgetBuilder>{
