@@ -4,9 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" group="android" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="android/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-919018585/path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/-919018585/path_provider.iml" group="android/path_provider" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2112985522/sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/2112985522/sqflite.iml" group="android/sqflite" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2045364271/url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/-2045364271/url_launcher.iml" group="android/url_launcher" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1908690831/com.tekartik.sqflite-sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/-1908690831/com.tekartik.sqflite-sqflite.iml" group="android/sqflite" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1937078264/io.flutter.plugins.pathprovider-path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/-1937078264/io.flutter.plugins.pathprovider-path_provider.iml" group="android/path_provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-459833230/io.flutter.plugins.urllauncher-url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/-459833230/io.flutter.plugins.urllauncher-url_launcher.iml" group="android/url_launcher" />
     </modules>
   </component>
 </project>
