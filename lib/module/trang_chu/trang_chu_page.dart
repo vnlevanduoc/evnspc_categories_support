@@ -40,15 +40,11 @@ class ConsumerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provider<TrangChuBloc>.value(
       value: TrangChuBloc(repo: Provider.of(context)),
-      child: Container(
-        // decoration: BoxDecoration(
-        //   // Box decoration takes a gradient
-        //   gradient: LinearGradient(colors: [
-        //     Color.fromRGBO(116, 116, 191, 1.0),
-        //     Color.fromRGBO(52, 138, 199, 1.0)
-        //   ]),
-        // ),
-        child: Consumer<TrangChuBloc>(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("EVNSPC - Sổ địa chỉ"),
+        ),
+        body: Consumer<TrangChuBloc>(
           builder: (context, bloc, child) => TrangChuWidget(bloc),
         ),
       ),
