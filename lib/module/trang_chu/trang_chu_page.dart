@@ -216,7 +216,7 @@ class _TrangChuWidgetState extends State<TrangChuWidget> {
                         ),
                       ),
                       subtitle: Text(
-                        listPerson[pIndex]["Phone"],
+                        '${listPerson[pIndex]["Phone"]} - Ext: ${listPerson[pIndex]["Ext"]}',
                         style: TextStyle(
                           fontSize: 13,
                           fontStyle: FontStyle.italic,
