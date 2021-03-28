@@ -1,9 +1,11 @@
 # This is a generated file; do not edit or check into version control.
-path_provider=E:\\Source\\Android\\FLUTTER\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider-1.6.11\\
-path_provider_linux=E:\\Source\\Android\\FLUTTER\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_linux-0.0.1+2\\
-path_provider_macos=E:\\Source\\Android\\FLUTTER\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_macos-0.0.4+3\\
-sqflite=E:\\Source\\Android\\FLUTTER\\.pub-cache\\hosted\\pub.dartlang.org\\sqflite-1.3.1\\
-url_launcher=E:\\Source\\Android\\FLUTTER\\.pub-cache\\hosted\\pub.dartlang.org\\url_launcher-5.5.0\\
-url_launcher_linux=E:\\Source\\Android\\FLUTTER\\.pub-cache\\hosted\\pub.dartlang.org\\url_launcher_linux-0.0.1+1\\
-url_launcher_macos=E:\\Source\\Android\\FLUTTER\\.pub-cache\\hosted\\pub.dartlang.org\\url_launcher_macos-0.0.1+7\\
-url_launcher_web=E:\\Source\\Android\\FLUTTER\\.pub-cache\\hosted\\pub.dartlang.org\\url_launcher_web-0.1.2\\
+path_provider=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.28/
+path_provider_linux=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-0.0.1+2/
+path_provider_macos=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-0.0.4+8/
+path_provider_windows=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-0.0.5/
+sqflite=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.2+4/
+url_launcher=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.7.10/
+url_launcher_linux=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-0.0.1+4/
+url_launcher_macos=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-0.0.1+9/
+url_launcher_web=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-0.1.5+3/
+url_launcher_windows=/Users/duoclv/Development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-0.0.1+3/
